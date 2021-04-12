@@ -19,7 +19,7 @@ pipeline {
         }
        stage('deploy') {
             steps {
-                sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  cat touch /applis/toto.txt
+                sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  cat touch /applis/toto.txt'
 
             }
 
