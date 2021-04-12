@@ -25,6 +25,14 @@ pipeline {
             }
 
         }
+       stage('destroy') {
+            steps {
+                sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173 rm -rf /applis/*'
+                sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  rmdir /applis'
+                
+            }
+
+        }
 
 
     }
