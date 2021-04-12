@@ -3,14 +3,24 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'ssh -oStrictHostKeyChecking=no root@62.171.191.173   uptime'
+                sh 'ssh -oStrictHostKeyChecking=no root@62.171.191.173   mkdir /applis'
+                 sh 'ssh -oStrictHostKeyChecking=no root@62.171.191.173   export Home_applis=/applis'
+                 sh 'ssh -oStrictHostKeyChecking=no root@62.171.191.173  chown youtechadmin:youtechadmin /applis'
             }
 
         }
         stage('Test') {
             steps {
-                sh 'ssh -oStrictHostKeyChecking=no root@62.171.191.173 apt update'
-                 sh 'ssh -oStrictHostKeyChecking=no root@62.171.191.173 ls -lrt'
+                sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  cd /applis && touch toto.txt
+                 sh "ssh -oStrictHostKeyChecking=no root@62.171.191.173  cd /applis && echo 'bonjour  a vous' > /applis/toto.txt"
+                 
+            }
+
+        }
+       stage('deploy') {
+            steps {
+                sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  cat touch toto.txt
+
             }
 
         }
