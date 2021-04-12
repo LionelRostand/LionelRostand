@@ -11,15 +11,15 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  cd /applis && touch toto.txt
-                 sh "ssh -oStrictHostKeyChecking=no root@62.171.191.173  cd /applis && echo 'bonjour  a vous' > /applis/toto.txt"
+                sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  touch /applis/toto.txt
+                 sh "ssh -oStrictHostKeyChecking=no root@62.171.191.173  echo 'bonjour  a vous' > /applis/toto.txt"
                  
             }
 
         }
        stage('deploy') {
             steps {
-                sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  cat touch toto.txt
+                sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  cat touch /applis/toto.txt
 
             }
 
