@@ -12,13 +12,14 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  touch /applis/toto.txt'
-                 sh 'ssh -oStrictHostKeyChecking=no root@62.171.191.173  echo bonjour  a vous > /applis/toto.txt'
+            
                  
             }
 
         }
        stage('deploy') {
             steps {
+                sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  chmod 755 /applis/toto.txt'
                 sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  cat touch /applis/toto.txt'
 
             }
