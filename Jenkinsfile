@@ -11,7 +11,9 @@ pipeline {
         }
         stage('Test') {
             steps {
+                 sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  echo $Home_applis'
                 sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  touch /applis/toto.txt'
+                sh 'ssh -oStrictHostKeyChecking=no  root@62.171.191.173  echo 'bonjour'>/applis/toto.txt '
             
                  
             }
