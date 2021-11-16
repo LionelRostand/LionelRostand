@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'ssh  root@192.168.1.38   ls -lrt'
+                sh 'ssh  root@192.168.1.37   ls -lrt'
                 
             }
 
