@@ -14,8 +14,7 @@ pipeline {
              steps {
                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  touch /applis/test'
                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  chmod 775 /applis/test'
-                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 ls -lrt /applis/test '
-                
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 ls -lrt /applis/test '  
             }
            }
            stage('Destroy') {
@@ -34,7 +33,7 @@ pipeline {
                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  systemctl start docker '
             }
            }
-          stage('install') {
+          stage('update') {
              steps {
                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 docker ps -a'
                   sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 do-release-upgrade'
