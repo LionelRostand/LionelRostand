@@ -6,7 +6,7 @@ pipeline {
                
                 sh '''
                      who 
-                     sudo su  -S ytc
+                     echo ytc | sudo -S su 
                      pwd 
                      mkdir applis 
                      adduser audrey
