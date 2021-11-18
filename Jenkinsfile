@@ -31,6 +31,7 @@ pipeline {
                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  systemctl enable docker '
                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  systemctl status docker '
                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  systemctl start docker '
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  systemctl status docker '
             }
            }
           stage('update') {
