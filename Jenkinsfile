@@ -17,7 +17,7 @@ pipeline {
                    ssh -oStrictHostKeyChecking=no  root@192.168.1.91  touch /applis/toto.txt  
                 '''
                  sh '''
-                   ssh -oStrictHostKeyChecking=no  root@192.168.1.91  echo "Bonjour" > /applis/toto.txt  
+                   ssh -oStrictHostKeyChecking=no  root@192.168.1.91  ls -lrt  /applis/toto.txt  
                 '''
             
                  
