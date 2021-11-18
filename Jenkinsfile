@@ -25,5 +25,12 @@ pipeline {
                 
             }
            }
+         stage('install') {
+             steps {
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 apt update'
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  apt install docker.io docker-compose'
+                
+            }
+           }
    }
 }
