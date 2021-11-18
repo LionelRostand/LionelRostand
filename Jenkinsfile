@@ -28,7 +28,7 @@ pipeline {
          stage('install') {
              steps {
                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 apt update'
-                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  apt install docker.io docker-compose ansible -y'
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  apt install docker.io -y && apt install docker-compose -y && apt install ansible -y'
                 
             }
            }
