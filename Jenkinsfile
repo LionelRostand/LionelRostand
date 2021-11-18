@@ -28,8 +28,16 @@ pipeline {
          stage('install') {
              steps {
                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 apt update'
-                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  apt install docker.io -y && apt install docker-compose -y && apt install ansible -y'
-                
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  apt install docker.io -y  && apt install ansible -y'
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  systemctl enable docker '
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  systemctl status docker '
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  systemctl start docker '
+            }
+           }
+          stage('install') {
+             steps {
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 docker ps -a'
+                 
             }
            }
    }
