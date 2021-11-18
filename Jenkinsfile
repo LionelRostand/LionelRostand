@@ -14,6 +14,7 @@ pipeline {
              steps {
                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  touch test'
                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  chmod 775 test'
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 ls -lrt '
                 
             }
            }
