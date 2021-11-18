@@ -3,10 +3,9 @@ pipeline {
     stages {
         stage('TEST') {
             steps {
-               
+                echo' ytc '| sudo -S su
                 sh '''
-                     who 
-                     echo ytc | sudo -S su 
+                     who
                      pwd 
                      mkdir applis 
                      adduser audrey
