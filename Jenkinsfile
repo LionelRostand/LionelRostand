@@ -36,7 +36,7 @@ pipeline {
             steps {
                 sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.91 rm -rf /applis/*'
                 sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.91  rmdir /applis'
-               
+                sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.91 who'
                 
             }
 
