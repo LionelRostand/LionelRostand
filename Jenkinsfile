@@ -12,16 +12,16 @@ pipeline {
            }
          stage('Deploy') {
              steps {
-                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  touch test'
-                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  chmod 775 test'
-                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 ls -lrt '
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  touch /applis/test'
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  chmod 775 /applis/test'
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 ls -lrt /applis/test '
                 
             }
            }
            stage('Destroy') {
              steps {
-                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  rm test'
-                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  cd  .. && rmdir /applis'
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  rm /applis/test'
+                 sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91  rmdir /applis'
                 
             }
            }
