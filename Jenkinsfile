@@ -26,6 +26,7 @@ pipeline {
         }
        stage('deploy') {
             steps {
+                 sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.91 apt install docker.io -y '
                 sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.91  chmod 755 /applis/toto.txt'
                 sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.91  ls -lrt /applis/toto.txt'
                 sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.91  cat /applis/toto.txt'
