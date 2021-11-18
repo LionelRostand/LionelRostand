@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.37   ls -lrt'
+                sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.37   uptime'
                 
             }
 
