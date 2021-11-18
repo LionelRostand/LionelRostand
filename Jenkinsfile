@@ -36,7 +36,7 @@ pipeline {
           stage('update') {
              steps {
                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 docker ps -a'
-                  sh 'ssh -o StrictHostKeyChecking=no  root@192.168.1.91 do-release-upgrade'
+                  
                  
             }
            }
