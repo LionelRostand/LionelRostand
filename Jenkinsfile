@@ -48,7 +48,7 @@ pipeline {
             steps {
                 sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.91 service docker status '
                 sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.91  docker ps -a'
-                 sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.91  docker run -p 8081 --name ngin -d nginx'
+                 sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.91  docker run -p 8082 --name nginX< -d nginx'
                 sh 'ssh -oStrictHostKeyChecking=no  root@192.168.1.91  docker ps -a'
             }
 
